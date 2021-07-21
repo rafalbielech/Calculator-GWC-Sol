@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="static/library/css/bootstrap.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <title>Girls Who Code | Mini Hackathon</title>
+</head>
+
+<body>
+    <div class="container py-4 text-center">
+        <h2>Girls Who Code | Mini Hackathon Solution</h2>
+        <h5>The goal of this hackathon is to interact with HTML and JS to make the calculator functional!!</h5>
+
+        <div class="calculator card mx-auto my-5">
+            <input type="text" class="calculator-screen z-depth-1" value="" disabled />
+            <div class="calculator-keys">
+                <button type="button" class="operator btn btn-info" value="+">+</button>
+                <button type="button" class="operator btn btn-info" value="-">-</button>
+                <button type="button" class="operator btn btn-info" value="*">&times;</button>
+                <button type="button" class="operator btn btn-info" value="/">&divide;</button>
+
+                <button type="button" value="7" class="btn btn-light waves-effect numeric">7</button>
+                <button type="button" value="8" class="btn btn-light waves-effect numeric">8</button>
+                <button type="button" value="9" class="btn btn-light waves-effect numeric">9</button>
+
+                <button type="button" value="4" class="btn btn-light waves-effect numeric">4</button>
+                <button type="button" value="5" class="btn btn-light waves-effect numeric">5</button>
+                <button type="button" value="6" class="btn btn-light waves-effect numeric">6</button>
+
+                <button type="button" value="1" class="btn btn-light waves-effect numeric">1</button>
+                <button type="button" value="2" class="btn btn-light waves-effect numeric">2</button>
+                <button type="button" value="3" class="btn btn-light waves-effect numeric">3</button>
+
+                <button type="button" value="0" class="btn btn-light waves-effect">0</button>
+                <button type="button" class="decimal function btn btn-secondary" value=".">.</button>
+                <button type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear">AC</button>
+
+                <button type="button" class="operator equal-sign btn btn-success" value="=">=</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="">
+                    <h5>Modification in <span class="font-weight-bold text-danger">index.html file</span> </h5>
+                    <xmp>
+                        <button type="button" class="operator btn btn-info" value="+">+</button>
+                        <button type="button" class="operator btn btn-info" value="-">-</button>
+                        <button type="button" class="operator btn btn-info" value="*">&times;</button>
+                        <button type="button" class="operator btn btn-info" value="/">&divide;</button>
+
+                        <button type="button" value="7" class="btn btn-light waves-effect numeric">7</button>
+                        <button type="button" value="8" class="btn btn-light waves-effect numeric">8</button>
+                        <button type="button" value="9" class="btn btn-light waves-effect numeric">9</button>
+
+                        <button type="button" value="4" class="btn btn-light waves-effect numeric">4</button>
+                        <button type="button" value="5" class="btn btn-light waves-effect numeric">5</button>
+                        <button type="button" value="6" class="btn btn-light waves-effect numeric">6</button>
+
+                        <button type="button" value="1" class="btn btn-light waves-effect numeric">1</button>
+                        <button type="button" value="2" class="btn btn-light waves-effect numeric">2</button>
+                        <button type="button" value="3" class="btn btn-light waves-effect numeric">3</button>
+                    </xmp>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="">
+                    <h5>Modification in <span class="font-weight-bold text-success">calculator.js file</span> </h5>
+                    <xmp>
+                        while (typeof (i = calculator_state.op_stack.shift()) !== 'undefined') {
+                            if (String(i) != 'NaN') {
+                                if (typeof (i) == "string") {
+                                    operator_type = i;
+                                } else {
+                                    if (operator_type == "+") {
+                                        running_val += i;
+                                    } else if (operator_type == "-") {
+                                        running_val -= i;
+                                    } else if (operator_type == "*") {
+                                        running_val *= i;
+                                    } else if (operator_type == "/") {
+                                        running_val /= i;
+                                    }
+                                }
+                            }
+                        }
+                    </xmp>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="static/library/js/jquery-3.6.0.min.js"></script>
+<script src="static/library/js/bootstrap.bundle.min.js"></script>
+<script src="static/calculator.js"></script>
+
+</html>
